@@ -49,6 +49,9 @@ h2 {
     height: 10em;
     font-size: 2em;
     text-align: right;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center;
   }
 
  .box-2 {
@@ -73,6 +76,9 @@ h2 {
     height: 10em;
     text-align: left;
     font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
  .box-5 {
     width: 100%;
