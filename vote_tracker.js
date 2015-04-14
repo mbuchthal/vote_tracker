@@ -30,8 +30,8 @@ function renderKitty(getRandomKitty) {   //place images into sections
   var elOne = document.getElementById('kittypic1');
   var elTwo = document.getElementById('kittypic2');
 
-  // elOne.innerHTML = "<img src='"+ imageLoc + getRandomKitty.kittyOne"' class="kittypics">";
-  // elTwo.innerHTML = "<img src='"+ imageLoc + getRandomKitty.kittyTwo"' class="kittypics">";
+  elOne.innerHTML = "<img src='"+ imageLoc + getRandomKitty.kittyOne"' class="kittypics">";
+  elTwo.innerHTML = "<img src='"+ imageLoc + getRandomKitty.kittyTwo"' class="kittypics">";
 };
 
 function Tracker(wins, losses);
