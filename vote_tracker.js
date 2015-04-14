@@ -1,7 +1,7 @@
 'use strict'
 (function() {
 
-document.addEventListener('onload', function(event)) {
+document.addEventListener('onload', function(event) {
 
 var Photo = function (randomKitty, description, wins, losses, winPercent) {
   this.randomKitty = ["kitten1.jpg", "kitten2.jpg", "kitten3.jpg", "kitten4.jpg", "kitten5.jpg", "kitten6.jpg", "kitten7.jpg", "kitten8.jpg", "kitten9.jpg", "kitten10.jpg", "kitten11.jpg", "kitten12.jpg", "kitten13.jpg", "kitten14.jpg"];
@@ -29,20 +29,39 @@ function getRandomKitty() {  //generate 2 random numbers, if equal, then generat
 function renderKitty(getRandomKitty) {   //place images into sections
   var elOne = document.getElementById('kittypic1');
   var elTwo = document.getElementById('kittypic2');
-  elOne.innerHTML = "<img src='"+ imageLoc + kittyOne"' class="kittypics">";
-  elTwo.innerHTML = "<img src='"+ imageLoc + kittyTwo"' class="kittypics">";
+
+  // elOne.innerHTML = "<img src='"+ imageLoc + getRandomKitty.kittyOne"' class="kittypics">";
+  // elTwo.innerHTML = "<img src='"+ imageLoc + getRandomKitty.kittyTwo"' class="kittypics">";
 };
-
-getRandomKitty();
-renderKitty();
-
 
 function Tracker(wins, losses);
   this.wins = wins;
   this.losses = losses;
-  this.showResults = function() {
+  this.tallyResults = function() { //function to show how many wins and %
+    var voteOne;
+    var voteTwo;
 
-  };
+}
+
+var canvas = document.getElementById('catcanvas');
+var ctx = canvas.getContext('2d');
+
+var barData = {
+  labels: ["Wins", "Losses", "Winning Percentage"],
+  datasets: [
+    {
+      fillColor : "#94ABCD",
+      strokeColor : "#69a0cd",
+      data : [Tracker.losses]
+    },
+      fillColor : "#94ABCD",
+      strokeColor : "#69a0cd",
+      data : [Tracker.wins]
+  ]
+};
+
+var canvas = document.getElementById('catcanvas').getContext('2d'); // get bar chart canvas
+new Chart(canvas).Bar(barData); //draw bar chart
 
 });
 })();
