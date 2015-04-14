@@ -1,35 +1,46 @@
-// (function() {
 
-// document.addEventListener('onload', function(event) {
-var randomKitty = ['Images/kitten1.jpg', 'Images/kitten2.jpg', 'Images/kitten3.jpg', 'Images/kitten4.jpg', 'Images/kitten5.jpg', 'Images/kitten6.jpg', 'Images/kitten7.jpg', 'Images/kitten8.jpg', 'Images/kitten9.jpg', 'Images/kitten10.jpg', 'Images/kitten11.jpg', 'Images/kitten12.jpg', 'Images/kitten13.jpg', 'Images/kitten14.jpg'];
-var Photo = function (wins, losses, winPercent) {
-  // var randomKitty = ['kitten1.jpg', 'kitten2.jpg', 'kitten3.jpg', 'kitten4.jpg', 'kitten5.jpg', 'kitten6.jpg', 'kitten7.jpg', 'kitten8.jpg', 'kitten9.jpg', 'kitten10.jpg', 'kitten11.jpg', 'kitten12.jpg', 'kitten13.jpg', 'kitten14.jpg'];
-  // var description = ['Holding a ribbon.', 'Tiny furball in a hand.', 'Too small too climb.', 'Monster-cat!', 'Finger lickin\' good!', 'It\'s been a tough week kitties.', 'I thought it was a litterbox!', 'I can\t be bothered kitty.', 'Peek-a-boo kitty!', 'Upside down kitty', 'Eating my own tail kitty', 'Never let go Rose, kitty.', 'Take me shopping kitty.', 'Permanently surprised kitty.'];
-  var wins = wins;
-  var losses = losses;
-  var winPercent = function(wins, losses) {
-    var percent = this.wins/(this.wins + this.losses);
-  }
+$(document).ready(function() {
+
+var Photo = function (location, description) {
+  this.location = location;
+  this.description = description;
+  this.wins;
+  this.losses;
+  this.winPercent;
 };
+var kittenArr = [];
+kittenArr.push(new Photo('Images/kitten1.jpg', 'Holding a ribbon.'));
+kittenArr.push(new Photo('Images/kitten2.jpg', 'Tiny furball in a hand.'));
+kittenArr.push(new Photo('Images/kitten3.jpg', 'Too small too climb.'));
+kittenArr.push(new Photo('Images/kitten4.jpg', 'Monster-cat!'));
+kittenArr.push(new Photo('Images/kitten5.jpg', 'Finger lickin\' good!'));
+kittenArr.push(new Photo('Images/kitten6.jpg', 'It\'s been a tough week kitties.'));
+kittenArr.push(new Photo('Images/kitten7.jpg', 'I thought it was a litterbox!'));
+kittenArr.push(new Photo('Images/kitten9.jpg', 'I can\t be bothered kitty.'));
+kittenArr.push(new Photo('Images/kitten9.jpg', 'Leave me alone kitty.'));
+kittenArr.push(new Photo('Images/kitten10.jpg', 'Upside down kitty'));
+kittenArr.push(new Photo('Images/kitten11.jpg', 'Eating my own tail kitty'));
+kittenArr.push(new Photo('Images/kitten12.jpg', 'Never let go Rose, kitty.'));
+kittenArr.push(new Photo('Images/kitten13.jpg', 'Take me shopping kitty.'));
+kittenArr.push(new Photo('Images/kitten14.jpg', 'Permanently surprised kitty.'));
 
-var imageLoc = 'Images/';
+
 
 function getRandomKitty() {  //generate 2 random numbers, if equal, then generate another two
-  var num = Math.floor(Math.random() * randomKitty.length);
-  var num2 = Math.floor(Math.random() * randomKitty.length);
+  var num = Math.floor(Math.random() * kittenArr.length);
+  console.log(num);
+  var num2 = Math.floor(Math.random() * kittenArr.length);
+  console.log(num2);
   while (num == num2) {
-      var num2 = Math.floor(Math.random() * randomKitty.length);
+      var num2 = Math.floor(Math.random() * kittenArr.length);
     }
-  var kittyOne = document.createElement('img');
-  var kittyTwo = document.createElement('img');
-  kittyOne.src = randomKitty[num];
-  kittyTwo.src = randomKitty[num2];
-  document.getElementById('kittypic1').appendChild(kittyOne);
-  document.getElementById('kittypic2').appendChild(kittyTwo);
+  $('#kittypic1').append($('<img src="'+ kittenArr[num2].location +'"></img>'));
+  $('#kittypic2').append($('<img src="'+ kittenArr[num].location +'"></img>'));
+  $('#figcap1').append(kittenArr[num].description);
+  $('#figcap2').append(kittenArr[num2].description);
 };
 
-
-  getRandomKitty();
+getRandomKitty();
 
 function Tracker(wins, losses) {
   this.wins = wins;
@@ -39,6 +50,16 @@ function Tracker(wins, losses) {
     var voteTwo;
   }
 }
+
+
+
+
+
+});
+
+
+
+
 
 // var canvas = document.getElementById('catcanvas');
 // var ctx = canvas.getContext('2d');
