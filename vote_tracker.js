@@ -34,22 +34,31 @@ function getRandomKitty() {  //generate 2 random numbers, if equal, then generat
   while (num == num2) {
       var num2 = Math.floor(Math.random() * kittenArr.length);
     }
-  $('#kittypic1').append($('<img src="'+ kittenArr[num2].location +'"></img>'));
-  $('#kittypic2').append($('<img src="'+ kittenArr[num].location +'"></img>'));
+  $('#kittypic1').append($('<img src="'+ kittenArr[num].location +'"></img>'));
+  $('#kittypic2').append($('<img src="'+ kittenArr[num2].location +'"></img>'));
   $('#figcap1').append(kittenArr[num].description);
   $('#figcap2').append(kittenArr[num2].description);
 };
 
 getRandomKitty();
 
-function Tracker(wins, losses) {
-  this.wins = wins;
-  this.losses = losses;
-  this.tallyResults = function() { //function to show how many wins and %
-    var voteOne;
-    var voteTwo;
-  }
-}
+
+
+
+// function Tracker(wins, losses) {
+//   // getRandomKitty();
+//   $('figure').on('hover', function(e) {
+//     $(figure).addClass('highlight');
+//   }
+
+
+//   this.wins = wins;
+//   this.losses = losses;
+//   this.tallyResults = function() { //function to show how many wins and %
+//     var voteOne;
+//     var voteTwo;
+//   }
+// }
 
 
 
