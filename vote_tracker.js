@@ -25,7 +25,6 @@ kittenArr.push(new Photo('Images/kitten13.jpg', 'Take me shopping kitty.'));
 kittenArr.push(new Photo('Images/kitten14.jpg', 'Permanently surprised kitty.'));
 
 
-
 function getRandomKitty() {  //generate 2 random numbers, if equal, then generate another two
   var num = Math.floor(Math.random() * kittenArr.length);
   console.log(num);
@@ -34,32 +33,54 @@ function getRandomKitty() {  //generate 2 random numbers, if equal, then generat
   while (num == num2) {
       var num2 = Math.floor(Math.random() * kittenArr.length);
     }
-  $('#kittypic1').append($('<img src="'+ kittenArr[num].location +'"></img>'));
+  $('#kittypic1').append($('<img src="'+ kittenArr[num].location +'"></img>')); //renders the pictures
   $('#kittypic2').append($('<img src="'+ kittenArr[num2].location +'"></img>'));
-  $('#figcap1').append(kittenArr[num].description);
+  $('#figcap1').append(kittenArr[num].description);  //renders the captions
   $('#figcap2').append(kittenArr[num2].description);
-  $('figure').on('mouseover', function() {
+  $('figure').on('mouseover', function() {  //highlight the hovered pic
     $('this').addClass('highlight');
   });
 
-// $function() {
-//   $('#kittypic1').on('click'), function(e) {
-
-//   $('#kittypic')
-
+function Tracker () {
+  $('#kittypic1').on('click'), function() {
+    kittenArr[num].wins += 1;
+    kittenArr[num2].losses += 1;
   }
-}
-
+  $('#kittypic2').on('click'), function() {
+    kittenArr[num2].wins += 1;
+    kittenArr[num].losses += 1;
+    }
+  }
 };
 
 getRandomKitty();
 
+var ctx = $("#myChart").get(0).getContext("2d");
+var myDoughnutChart = new Chart(ctx[1]).Doughnut(data,options);
+var data = [
+    {
+        value: 300,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Red"
+    },
+    {
+        value: 50,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "Green"
+    },
+    {
+        value: 100,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Yellow"
+    }
+]
 
 // function Tracker() {
 //   getRandomKitty();
-//   $('figure').on('hover', function(e) {
-//     $(figure).addClass('highlight');
-//   }
+
 
 // Tracker();
 
@@ -79,28 +100,3 @@ getRandomKitty();
 
 
 
-
-
-// var canvas = document.getElementById('catcanvas');
-// var ctx = canvas.getContext('2d');
-
-// var barData = {
-//   labels: ["Wins", "Losses", "Winning Percentage"],
-//   datasets: [
-//     {
-//       fillColor : "#94ABCD",
-//       strokeColor : "#69a0cd",
-//       data : [Tracker.losses]
-//     },
-//       fillColor : "#94ABCD",
-//       strokeColor : "#69a0cd",
-//       data : [Tracker.wins]
-//   ]
-// };
-
-// var canvas = document.getElementById('catcanvas').getContext('2d'); // get bar chart canvas
-// new Chart(canvas).Bar(barData); //draw bar chart
-
-// });
-
-// })();
