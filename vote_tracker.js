@@ -38,19 +38,30 @@ function getRandomKitty() {  //generate 2 random numbers, if equal, then generat
   $('#kittypic2').append($('<img src="'+ kittenArr[num2].location +'"></img>'));
   $('#figcap1').append(kittenArr[num].description);
   $('#figcap2').append(kittenArr[num2].description);
+  $('figure').on('mouseover', function() {
+    $('this').addClass('highlight');
+  });
+
+// $function() {
+//   $('#kittypic1').on('click'), function(e) {
+
+//   $('#kittypic')
+
+  }
+}
+
 };
 
 getRandomKitty();
 
 
-
-
-// function Tracker(wins, losses) {
-//   // getRandomKitty();
+// function Tracker() {
+//   getRandomKitty();
 //   $('figure').on('hover', function(e) {
 //     $(figure).addClass('highlight');
 //   }
 
+// Tracker();
 
 //   this.wins = wins;
 //   this.losses = losses;

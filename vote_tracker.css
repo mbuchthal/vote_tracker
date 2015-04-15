@@ -98,7 +98,9 @@ button {
 }
 #vote2 {
   margin-left: 3em;
+
 }
-.highlight {
-  border-color: #69a0cd;
+img:hover {
+  border-radius: 1em;
+  border: .8em solid #69a0cd;
 }
