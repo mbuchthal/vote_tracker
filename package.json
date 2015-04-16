@@ -1,0 +1,22 @@
+{
+  "name": "vote_tracker",
+  "version": "0.1.0",
+  "description": "kitty wars",
+  "main": "vote_tracker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mbuchthal/vote_tracker.git"
+  },
+  "author": "mark.buchthal@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mbuchthal/vote_tracker/issues"
+  },
+  "homepage": "https://github.com/mbuchthal/vote_tracker",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
