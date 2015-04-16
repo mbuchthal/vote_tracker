@@ -118,5 +118,8 @@ button {
 .hover2:hover {
   box-shadow: 10px 5px 5px #d78dbf;
   border: .8em solid #d78dbf;
-
 }
+canvas {
+  margin-top: 3em;
+}
+]
