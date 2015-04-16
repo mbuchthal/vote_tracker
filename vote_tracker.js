@@ -25,6 +25,19 @@ function getRandomKitty() {  //generate 2 random numbers, if equal, then generat
     $('this').addClass('highlight');
   });
 
+function Tracker () {
+  $('#kittypic1').on('click'), function() {
+    kittenArr[num].wins += 1;
+    kittenArr[num2].losses += 1;
+  }
+  $('#kittypic2').on('click'), function() {
+    kittenArr[num2].wins += 1;
+    kittenArr[num].losses += 1;
+    }
+  }
+  // chart.segments[0].value = kittenArr[num].wins;
+  // chart.segments[1].value = kittenArr[num].wins;
+  // chart.update();
 };
 
 $.ajax({
