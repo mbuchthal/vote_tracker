@@ -53,7 +53,19 @@ h2 {
     justify-content: center; /* align horizontal */
     align-items: center;
     font-color: #94abcd;
-  }
+
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 2;
+    -moz-animation-name: blinker;
+}
+
+@-webkit-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
 
  .box-2 {
     width: 30%;
@@ -81,19 +93,37 @@ h2 {
     justify-content: center;
     align-items: center;
     font-color: #d78dbf;
+
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 2;
+    -moz-animation-name: blinker;
+}
+
+@-webkit-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
   }
  .box-5 {
     width: 100%;
     height: 10em;
+    text-align: center;
+    vertical-align: center;
+    justify-content: center;
 }
 form {
   margin-top: 6em;
 }
 button {
   text-transform: bold;
-  border-radius: 3em;
+  border-radius: 1em;
   background-color: #d78dbf;
-  margin: 2em auto 0 auto;
+
+
 }
 #vote1 {
   margin-right: 3em;
@@ -122,4 +152,4 @@ button {
 canvas {
   margin-top: 3em;
 }
-]
+
