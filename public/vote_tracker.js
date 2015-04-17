@@ -27,7 +27,6 @@ function getRandomKitty() {  //generate 2 random numbers, if equal, then generat
   $('figure').on('mouseover', function() {  //highlight the hovered pic
     $('this').addClass('highlight');
   $('box-6').addClass('blinker');
-
   });
 
   var newChart = document.getElementById('myChart').getContext('2d');
@@ -58,15 +57,15 @@ chart = new Chart(newChart).Doughnut(chartData, chartOptions);
     kittenArr[num].wins += 1;
     kittenArr[num2].losses += 1;
     chart.segments[1].value += 1;
-    localStorage.setItem('wins1', JSON.stringify(kittenArr[num].wins));
-    localStorage.setItem('losses1', JSON.stringify(kittenArr[num2].losses));
-    JSON.parse(localStorage.getItem('wins1'));
-    JSON.parse(localStorage.getItem('losses1'));
+    localStorage.setItem(kittenArr[num].location, kittenArr[num].wins);
+    // localStorage.setItem('losses1', JSON.stringify(kittenArr[num2].losses));
+    // JSON.parse(localStorage.getItem('wins1'));
+    // JSON.parse(localStorage.getItem('losses1'));
     chart.update();
     $('.box-7').text('Kitty Two!');
     $('.box-6').text('Kitty One Wins!');
     // $('#kittyOneResults').remove();
-    $('#kittyOneResults').text('This kitty has ' + JSON.parse(localStorage.getItem('wins1')) + ' wins and ' + JSON.parse(localStorage.getItem('losses1')) + ' losses!');
+    $('#kittyOneResults').text('This kitty has ' + kittenArr[num].wins + ' wins and ' + kittenArr[num].losses + ' losses!');
     $('#kittyTwoResults').text('This kitty has ' + kittenArr[num2].wins + ' wins and ' + kittenArr[num2].losses + ' losses!');
   });
 
@@ -75,10 +74,11 @@ chart = new Chart(newChart).Doughnut(chartData, chartOptions);
     kittenArr[num2].wins += 1;
     kittenArr[num].losses += 1;
     chart.segments[0].value += 1;
-    localStorage.setItem('wins2', JSON.stringify(kittenArr[num2].wins));
-    localStorage.setItem('losses2', JSON.stringify(kittenArr[num].losses));
-    JSON.parse(localStorage.getItem('wins2'));
-    JSON.parse(localStorage.getItem('losses2'));
+    localStorage.setItem(kittenArr[num2].location, JSON.stringify(kittenArr[num2].wins));
+      // localStorage.setItem('wins2', JSON.stringify(kittenArr[num2].wins));
+      // localStorage.setItem('losses2', JSON.stringify(kittenArr[num].losses));
+      // JSON.parse(localStorage.getItem('wins2'));
+      // JSON.parse(localStorage.getItem('losses2'));
     chart.update();
     $('.box-6').text('Kitty One!');
     $('.box-7').text('Kitty Two Wins!');
@@ -111,9 +111,10 @@ chart = new Chart(newChart).Doughnut(chartData, chartOptions);
       .done(function(res) {
         $(res.data.images).each(function(i) {
           var imgurList = res.data.images;
-          kittenArr.push(new Photo(imgurList[i].link, imgurList[i].title, imgurList[i].vote));
+          var hasVotes = window.localStorage.getItem(imgurList.link)
+          kittenArr.push(new Photo(imgurList[i].link, imgurList[i].title, imgurList[i].vote + hasVotes));
         })
-        console.log(kittenArr);
+
          chart1 = getRandomKitty();
       })
       .fail(function(err) {
