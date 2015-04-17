@@ -1,10 +1,11 @@
 {
-  "name": "vote_tracker",
-  "version": "0.1.0",
+  "name": "Cute-Kitten-Pageant",
+  "version": "1.0.0",
   "description": "kitty wars",
   "main": "vote_tracker.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,6 @@
   "homepage": "https://github.com/mbuchthal/vote_tracker",
   "dependencies": {
     "express": "^4.12.3"
-  }
+  },
+  "devDependencies": {}
 }
